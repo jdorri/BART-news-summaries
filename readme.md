@@ -21,6 +21,10 @@ pip install -r requirements.txt
 
 The next stage is to create an API key for [News API](https://newsapi.org), ours news aggregator. Once a key has been downloaded, place it in ```news_fetcher.py```.
 
+Finally, install SpaCy's ```en_core_web_sm``` model at the command line:
+
+```python -m spacy download en_core_web_sm```
+
 ## Usage
 
 The application uses Streamlit for displaying news items on an interactive web page. 
