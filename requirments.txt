@@ -1,0 +1,6 @@
+pandas 
+streamlit
+newsapi
+transformers[torch]
+spacy
+newspaper
