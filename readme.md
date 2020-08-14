@@ -27,17 +27,15 @@ The application uses Streamlit for displaying news items on an interactive web p
 
 To run the application, move to the top level of this directory and run the following command:
 
-'''
+```
 streamlit run main.py
-'''
+```
 
 This will open a new page on your default browser, using localhost as host. 
 
 The application is now ready to be used! At the top is a text box for entering a search query, e.g., 'Nicola Sturgeon'. After that, press the 'Get news' button below it and live news will be displayed (for the current day), consisting of the article title, an image thumbnail, a summary of the article, and key entities relative to the queried entity. 
 
-### First time usage
-
-To generate the article summaries, we use BART (BART-large-CNN), a pre-trained language model with summarisation capabilities. The first time the code is run, BART will automatically be downloaded, which may take some time. 
+NOTE: To generate the article summaries, we use BART (BART-large-CNN), a pre-trained language model with summarisation capabilities. The first time the code is run, BART will automatically be downloaded, which may take some time. 
 
 ## Warning
 
