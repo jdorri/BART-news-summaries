@@ -15,11 +15,11 @@ The application is based in Python and requires the following packages:
 
 These can be installed with (after first sourcing into a newly-created virtual environment):
 
-'''
+```
 pip install -r requirements.txt
-'''
+```
 
-The next stage is to create an API key for [News API](https://newsapi.org), ours news aggregator. Once a key has been downloaded, place it in '''news_fetcher.py'''.
+The next stage is to create an API key for [News API](https://newsapi.org), ours news aggregator. Once a key has been downloaded, place it in ```news_fetcher.py```.
 
 ## Usage
 
@@ -37,15 +37,17 @@ The application is now ready to be used! At the top is a text box for entering a
 
 ### First time usage
 
-To generate the article summaries, we use BART( BART-large-CNN), a pre-trained language model with summarisation capabilities. The first time the code is run, BART will automatically be downloaded, which may take some time. 
+To generate the article summaries, we use BART (BART-large-CNN), a pre-trained language model with summarisation capabilities. The first time the code is run, BART will automatically be downloaded, which may take some time. 
 
 ## Warning
 
-It is possible to use BART for inference on a CPU. (Currently, the code is written to work on a CPU and not a GPU). However, because of the size of the BART model, we recommend using a powerful CPU when using using this prototype.
+It is possible to use BART for inference on a CPU. (Currently, the code is written to work on a CPU and not a GPU). However, because of the size of the BART model, we recommend using a powerful CPU when using this prototype.
 
 Also, Transformers will raise a warning about using the model without further fine tuning - this is fine to ignore. 
 
 ## Screenshot
+
+Here is a screenshot:
 
 ![Our Sreamlit news app](screenshots/screenshot_1.png)
 
