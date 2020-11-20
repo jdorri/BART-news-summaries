@@ -1,6 +1,6 @@
 # ABC PR News Application
 
-This is a prototype of a news application for a hypothetical public relations firm, ABC PR. With this tool, public relations professionals can keep track of news content on their clients and react timely. 
+This is a prototype of a news application for a hypothetical public relations firm, ABC PR. With this summarisation and entitiy-extraction tool, public relations professionals can keep track of news content on their clients and react timely. 
 
 ## Installation
 
