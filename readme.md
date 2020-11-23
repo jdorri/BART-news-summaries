@@ -27,7 +27,7 @@ Finally, install SpaCy's ```en_core_web_sm``` model at the command line:
 
 ## Usage
 
-The application uses Streamlit for displaying news items on an interactive web page. 
+The application uses [Streamlit](https://www.streamlit.io) for displaying news items on an interactive web page. 
 
 To run the application, move to the top level of this directory and run the following command:
 
