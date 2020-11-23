@@ -4,70 +4,68 @@ from text_scraper import TextScraper
 from nlp_tasks import NLP
 
 class DataFrameManager(object):
+    """
+    A class for creating a "news dataframe" from
+    the raw JSON-formatted response data. Simplifies 
+    data access for downstream NLP tasks.
+    """
 
     def __init__(self):
         pass
 
+    def make_df(self, news, query):
+        """
+        Makes the Pandas dataframe. 
+
+        Args:
+            news (NewsAPI): reponse object
+            query (str): company/person 
+        Returns:
+            df (Dataframe): news dataframe 
+        """
+        rows = self.make_rows_from_json(news, query)
+        col_names = ['Publisher', 'Title', 'URL', 'Image URL', 'Date', 'Scrape', 'BART', 'NE_1']
+
+        df = pd.DataFrame(rows, columns=col_names)
+        return df 
+
     @staticmethod
     def make_rows_from_json(news, query):
+        """
+        Peforms the JSON-to-rows conversion.
+
+        Args:
+            news (NewsAPI): reponse object
+        Returns:
+            rows (list): each element is 
+            a list containing data for the
+            frontend, one for each article
+        """
         rows = []
-        for article in news['articles']:
-            publisher = article['source']['name']
-            title = article['title']
-            url = article['url']
-            image_url = article['urlToImage']
-            date = article['publishedAt']
-            
-            scraper = TextScraper(url)
-            scrape = scraper.scrape()
+        if news['totalResults'] != 0:
+            for article in news['articles']:
+                publisher = article['source']['name']
+                title = article['title']
+                url = article['url']
+                image_url = article['urlToImage']
+                date = article['publishedAt']
+                
+                scraper = TextScraper(url)
+                scrape = scraper.scrape()
 
-            nlp = NLP()
+                nlp = NLP()
+                if scrape == '':
+                    BART = 'Not available...'
+                else:
+                    BART = nlp.summarise_with_BART(scrape)
 
-            if scrape == '':
-                BART = 'Not available...'
-            else:
-                BART = nlp.summarise_with_BART(scrape)
-
-            key_ents = nlp.NER_with_SpaCy(scrape, query)
-            ent_1 = key_ents[0][0] 
-            ent_2 = key_ents[1][0]
-            
-            row = [publisher, 
-                    title, 
-                    url, 
-                    image_url, 
-                    date,
-                    scrape,
-                    BART,
-                    ent_1,
-                    ent_2]
-            rows.append(row)
+                key_ent = nlp.NER_with_SpaCy(scrape, query)
+                ent_1 = key_ent[0][0] 
+                
+                row = [publisher, title, url, image_url, date, scrape, BART, ent_1]
+                rows.append(row)
 
         return rows
-
-    def make_df(self, news, query):
-        rows = self.make_rows_from_json(news, query)
-        col_names = ['Publisher', 
-                        'Title', 
-                        'URL', 
-                        'Image URL', 
-                        'Date',
-                        'Scrape',
-                        'BART',
-                        'NE_1',
-                        'NE_2']
-        df = pd.DataFrame(rows, columns=col_names)
-    
-        return df 
-    
-
-    # def add_column_to_df(self, df, column_name, data):
-    #     df.insert(column_name, data, True)
-    #     return df 
-
-    # def prep_text_for_inference(self, df, column_name):
-    #     sentances_list = [sentance for sentance in df[column_name]]
-    #     return sentances_list
 
 
 

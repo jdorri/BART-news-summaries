@@ -1,6 +1,6 @@
-# ABC PR News Application
+# ABC Public Relations News App
 
-This is a prototype of a news application for a hypothetical public relations firm, ABC PR. With this summarisation and entitiy-extraction tool, public relations professionals can keep track of news content on their clients and react timely. 
+This is a prototype of a news summarisation and entity-extraction tool for a hypothetical public relations firm, ABC Public Relations. With this app, public relations professionals can keep track of the potential mass of news content on their clients and react timely. 
 
 ## Installation
 
@@ -51,7 +51,7 @@ Also, Transformers will raise a warning about using the model without further fi
 
 Here is a screenshot:
 
-![Our Sreamlit news app](screenshots/screenshot_1.png)
+![The Sreamlit news app](screenshots/screenshot.png)
 
 
 

@@ -4,3 +4,5 @@ newsapi
 transformers[torch]
 spacy
 newspaper
+
+
