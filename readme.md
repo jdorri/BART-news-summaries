@@ -4,16 +4,16 @@ This is a prototype of a news summarisation and entity-extraction tool for a hyp
 
 ## Installation
 
-The application is based in Python and requires the following packages:
+The application is based in Python 3.7 and requires the following packages:
 
 * pandas 
 * streamlit
 * newsapi
-* transformers[torch] - installs PyTorch torch automatically (required for the Transformers back-end)
+* transformers 
 * spacy
 * newspaper
 
-These can be installed with (after first sourcing into a newly-created virtual environment):
+These dependencies can be installed with (after first sourcing into a newly-created virtual environment):
 
 ```
 pip install -r requirements.txt
@@ -21,9 +21,7 @@ pip install -r requirements.txt
 
 The next stage is to create an API key for [News API](https://newsapi.org), ours news aggregator. Once a key has been downloaded, place it in ```news_fetcher.py```.
 
-Finally, install SpaCy's ```en_core_web_sm``` model at the command line:
-
-```python -m spacy download en_core_web_sm```
+Note: SpaCy's ```en_core_web_sm``` model is installed with the requirements file rather than at the command line.
 
 ## Usage
 
@@ -37,7 +35,7 @@ streamlit run main.py
 
 This will open a new page on your default browser, using localhost as host. 
 
-The application is now ready to be used! At the top is a text box for entering a search query, e.g., 'Nicola Sturgeon'. After that, press the 'Get news' button below it and live news will be displayed (for the current day), consisting of the article title, an image thumbnail, a summary of the article, and key entities relative to the queried entity. 
+At the top is a text box for entering a search query, e.g., 'Nicola Sturgeon'. After that, press the 'Get news' button below it and live news will be displayed (for the current day), consisting of the article title, an image thumbnail, a summary of the article, and key entities relative to the queried entity. 
 
 NOTE: To generate the article summaries, we use BART (BART-large-CNN), a pre-trained language model with summarisation capabilities. The first time the code is run, BART will automatically be downloaded, which may take some time (size: 1.6GB). 
 
