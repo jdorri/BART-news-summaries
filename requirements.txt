@@ -1,6 +1,6 @@
 pandas 
 streamlit
-newsapi
+newsapi-python
 transformers
 torch
 torchvision
