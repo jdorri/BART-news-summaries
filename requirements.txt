@@ -2,10 +2,8 @@ pandas
 streamlit
 newsapi-python
 transformers
-torch
-torchvision
+-f https://download.pytorch.org/whl/torch_stable.html
+torch==1.7.0+cpu 
 spacy
 https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.1.0/en_core_web_sm-2.1.0.tar.gz
 newspaper3k
-
-
