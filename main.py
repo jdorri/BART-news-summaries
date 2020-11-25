@@ -1,5 +1,4 @@
 import streamlit as st
-from newsapi import NewsApiClient
 
 from news_fetcher import NewsFetcher
 from df_manager import DataFrameManager
