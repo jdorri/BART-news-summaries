@@ -37,7 +37,7 @@ This will open a new page on your default browser, using localhost as host.
 
 At the top is a text box for entering a search query, e.g., 'Nicola Sturgeon'. After that, press the 'Get news' button below it and live news will be displayed (for the current day), consisting of the article title, an image thumbnail, a summary of the article, and key entities relative to the queried entity. 
 
-NOTE: To generate the article summaries, we use BART (BART-large-CNN), a pre-trained language model with summarisation capabilities. The first time the code is run, BART will automatically be downloaded. THis may take some time (size: 1.6GB). 
+NOTE: To generate the article summaries, we use BART (BART-large-CNN), a pre-trained language model with summarisation capabilities. The first time the code is run, BART will automatically be downloaded. This may take some time (size: 1.6GB). 
 
 ## Warning
 
