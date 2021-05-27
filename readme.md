@@ -41,16 +41,16 @@ NOTE: To generate the article summaries, we use BART (BART-large-CNN), a pre-tra
 
 ## Warning
 
-It is possible to use BART for inference on a CPU. However, because of the size of the BART model, we recommend using a good CPU when using this prototype.
+It is possible to use BART for inference on a CPU. However, because of the size of the BART model, we recommend using a good CPU when using this prototype. 
 
 Also, Transformers will raise a warning about using the model without further fine tuning - this is fine to ignore. 
+
+## Contributions 
+
+This app was built in a matter of a few days, showing the power of modern APIs such as Hugging Face and streamlit. If you have an idea of how you'd like to improve it, feel free to contribute your changes.
 
 ## Screenshot
 
 Here is a screenshot:
 
 ![The Sreamlit news app](screenshots/screenshot.png)
-
-## Contributions 
-
-This app was built in a matter of a few days, showing the power of modern APIs such as Hugging Face and streamlit. If you have an idea of how you'd like to improve it, feel free to contribute your changes.
