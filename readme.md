@@ -47,7 +47,7 @@ Also, Transformers will raise a warning about using the model without further fi
 
 ## Contributions 
 
-This app was built in a matter of a few days, showing the power of modern APIs such as Hugging Face and streamlit. If you have an idea of how you'd like to improve it, feel free to contribute your changes.
+This app was built in a matter of a few days, showing the power of modern APIs such as Hugging Face and Streamlit. If you have an idea of how you'd like to improve it, feel free to contribute your changes.
 
 ## Screenshot
 
