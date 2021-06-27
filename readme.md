@@ -1,6 +1,6 @@
 # RBCxImperial News Summarisation App
 
-This is a prototype of a news summarisation and entity-extraction tool for a hypothetical public relations firm, ABC Relations. With this app, PR professionals can keep track of the potential mass of news content on their clients and react timely. 
+This is a prototype of a data science tool to help Public Relations professionals keep track of the potential mass of news content on their clients and react timely. The work was completed during the interview stages of a PhD with Imperial's Data Science Institute and Royal Bank of Canada and makes use of a modern NLP stack of Transformers, spaCy, and Streamlit. 
 
 ## Installation
 
@@ -22,7 +22,7 @@ pip install -r requirements.txt
 
 The next stage is to create an API key for [News API](https://newsapi.org), ours news aggregator. Once a key has been downloaded, place it in ```news_fetcher.py```.
 
-Note: SpaCy's ```en_core_web_sm``` model is installed with the requirements file rather than at the command line.
+Note: spaCy's ```en_core_web_sm``` model is installed with the requirements file rather than at the command line.
 
 ## Usage
 
@@ -36,22 +36,18 @@ streamlit run main.py
 
 This will open a new page on your default browser, using localhost as host. 
 
-At the top is a text box for entering a search query, e.g., 'Nicola Sturgeon'. After that, press the 'Get news' button below it and live news will be displayed (for the current day), consisting of the article title, an image thumbnail, a summary of the article, and key entities relative to the queried entity. 
+At the top is a text box for entering a search query, e.g., 'Donald Trump'. After that, press the 'Get news' button below it and live news will be displayed (for the current day), consisting of the article title, an image thumbnail, an AI-generated summary, and key entities relative to the queried entity. 
 
-NOTE: To generate the article summaries, we use BART (BART-large-CNN), a pre-trained language model with SOTA summarisation capabilities. The first time the code is run, BART will automatically be downloaded. This may take some time (model size: 1.6GB). 
+NOTE: To generate the news summaries, we use BART (BART-large-CNN), a pre-trained language model with SOTA summarisation capabilities. The first time the code is run, BART will automatically be downloaded. This may take some time (model size: 1.6GB).
 
 ## Warning
 
-It is possible to use BART for inference on a CPU. However, because of the size of the BART model, we recommend using a good CPU when using this prototype. 
+For this prototype, we use a CPU to perform BART inference. Because of the size of the model, we recommend using a strong CPU if you want to scale up the amount of news processed. 
 
 Also, Transformers will raise a warning about using the model without further fine tuning - this is fine to ignore. 
 
-## Contributions 
-
-This app was built in a matter of a few days for a Imperial-Royal Bank of Canada PhD interview project, showing the power of modern APIs such as Hugging Face and Streamlit. If you have an idea of how you'd like to improve it, feel free to contribute your changes. 
-
 ## Screenshot
 
-Here is a screenshot:
+Here is a screenshot of the tool:
 
 ![The Sreamlit news app](screenshots/screenshot.png)
