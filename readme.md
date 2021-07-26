@@ -38,7 +38,7 @@ This will open a new page on your default browser, using localhost as host.
 
 At the top is a text box for entering a search query. After that, press the 'Get news' button below it and live news will be displayed, consisting of the article title, an image thumbnail, a summary, and key entities relative to the queried entity. 
 
-To generate the news summaries, I use [BART](https://arxiv.org/pdf/1910.13461.pdf) (BART-large-CNN), a pre-trained language model with SOTA summarisation capabilities. The first time the app is run, BART will be automatically be downloaded and cached locally. 
+To generate the news summaries, I use [BART](https://arxiv.org/pdf/1910.13461.pdf) (BART-large-CNN), a pre-trained language model with SOTA summarisation capabilities. The first time the app is run, BART will be automatically downloaded and cached locally. 
 
 ## CPU support only 
 
