@@ -42,12 +42,12 @@ class DataFrameManager(object):
             frontend, one for each article
         """
         rows = []
-        if news['totalResults'] != 0:
+        if news['articles'] != []:
             for article in news['articles']:
-                publisher = article['source']['name']
+                publisher = article['source']['Name']
                 title = article['title']
                 url = article['url']
-                image_url = article['urlToImage']
+                image_url = ''#article['urlToImage']
                 date = article['publishedAt']
                 
                 scraper = TextScraper(url)

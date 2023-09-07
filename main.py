@@ -19,6 +19,8 @@ if __name__ == "__main__":
             news_fetcher = NewsFetcher(query)
             news = news_fetcher.get_everything() # the 'raw' news (JSON-formatted)
 
+            print(news)
+
             df_manager = DataFrameManager()
             df = df_manager.make_df(news, query) # the reformated news (a Pandas df)
 
@@ -35,7 +37,7 @@ if __name__ == "__main__":
                         - The key entity in the text relative to the queried entity 
                     """
                     st.subheader(title)
-                    st.image(image_url, width=200)
+                    #st.image(image_url, width=200)
                     st.write('Summary: ', body)
                     if ent_1 != None:
                         st.write('Key relative entity: ', str(ent_1))
@@ -46,7 +48,7 @@ if __name__ == "__main__":
                 # iterate over the above-created df  
                 for i in range(len(df)):
                     title = df['Title'][i]
-                    image_url = df['Image URL'][i]
+                    image_url = ''#df['Image URL'][i]
                     summary = df['BART'][i][0]
                     ent_1 = df['NE_1'][i]
                     url = df['URL'][i]

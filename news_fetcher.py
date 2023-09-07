@@ -17,7 +17,7 @@ class NewsFetcher(object):
     further information on the Python client library.
     """
 
-    API_KEY = 'your_key' # place your API key here once downloaded from https://newsapi.org
+    API_KEY = '4ad210ef5a3d4c499b409f3d4fb3ab36' # place your API key here once downloaded from https://newsapi.org
 
     def __init__(self, query):
         self.query = query  # e.g., 'Donald Trump' 
